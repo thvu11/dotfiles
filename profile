@@ -30,6 +30,8 @@ alias timezone='ls -l /etc/localtime| cut -d"/" -f8,9'
 alias showhiddenfile='defaults write com.apple.Finder AppleShowAllFiles TRUE;killall Finder'
 alias hidehiddenfile='defaults write com.apple.Finder AppleShowAllFiles FALSE;killall Finder'
 alias cpanshell='sudo perl -MCPAN -e shell'
+alias lsd="ls -d */"
+alias reload="exec $SHELL -l"
 
 git-latest-tag() {
     git ls-remote --tags $1 | sort -t '/' -k 3 -V | awk '{print $2}' | tail -n 1
