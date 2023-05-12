@@ -61,6 +61,13 @@ dockertags() {
     echo "${tags}"
 }
 
+d-restart() {
+    echo "$@"
+    docker-compose stop "$@"
+    docker-compose rm -fv "$@"
+    docker-compose up -d "$@"
+}
+
 aws() {
     docker run --rm -v ~/.aws:/root/.aws:ro amazon/aws-cli "$@"
 }
