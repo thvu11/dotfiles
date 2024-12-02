@@ -32,9 +32,23 @@ alias hidehiddenfile='defaults write com.apple.Finder AppleShowAllFiles FALSE;ki
 alias cpanshell='sudo perl -MCPAN -e shell'
 alias lsd="ls -d */"
 alias reload="exec $SHELL -l"
+alias py3="/usr/local/bin/python3"
+alias pl="/usr/bin/perl"
 
 git-latest-tag() {
     git ls-remote --tags $1 | sort -t '/' -k 3 -V | awk '{print $2}' | tail -n 1
+}
+
+git-f5() {
+    arg="$1"
+    git checkout main
+    git branch -D "$arg"
+    git pull
+    git checkout "$arg"
+}
+
+git-conflict() {
+    grep -rn '<<<<\|>>>>\|====' "$1"
 }
 
 tree() {
