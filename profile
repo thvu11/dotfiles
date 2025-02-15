@@ -1,24 +1,22 @@
 export SVN_EDITOR="vim"
-source ~/perl5/perlbrew/etc/bashrc
 
 alias c='clear'
 alias x='exit'
 alias p='pwd'
 alias v='vim'
-alias s='/usr/local/bin/svn'
-alias pb='/Users/trieuv/perl5/perlbrew/bin/perlbrew'
-alias g='/usr/local/bin/git'
-alias gs='/usr/local/bin/git status'
-alias gf='/usr/local/bin/git diff'
-alias gb='/usr/local/bin/git branch'
-alias glp='/usr/local/bin/git log -p'
-alias glo='/usr/local/bin/git log --oneline'
+alias s='svn'
+alias g='git'
+alias gs='git status'
+alias gf='git diff'
+alias gb='git branch'
+alias glp='git log -p'
+alias glo='git log --oneline'
 alias profile='vim ~/.profile'
 alias bashrc='vim ~/.bashrc'
 alias ci='docker rmi -f $(docker images -f "dangling=true" -q )'
 alias cv='docker volume rm -f $(docker volume ls -qf dangling=true)'
 alias dsp='docker system prune'
-alias d='docker-compose'
+alias d='docker compose'
 alias dm='docker-machine'
 alias disk='df -h'
 alias h='history'
@@ -32,8 +30,8 @@ alias hidehiddenfile='defaults write com.apple.Finder AppleShowAllFiles FALSE;ki
 alias cpanshell='sudo perl -MCPAN -e shell'
 alias lsd="ls -d */"
 alias reload="exec $SHELL -l"
-alias py3="/usr/local/bin/python3"
-alias pl="/usr/bin/perl"
+alias py3="python3"
+alias pl="perl"
 
 git-latest-tag() {
     git ls-remote --tags $1 | sort -t '/' -k 3 -V | awk '{print $2}' | tail -n 1
@@ -77,9 +75,9 @@ dockertags() {
 
 d-restart() {
     echo "$@"
-    docker-compose stop "$@"
-    docker-compose rm -fv "$@"
-    docker-compose up -d "$@"
+    docker compose stop "$@"
+    docker compose rm -fv "$@"
+    docker compose up -d "$@"
 }
 
 aws() {
