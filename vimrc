@@ -9,7 +9,6 @@ set backspace=indent,eol,start
 set hlsearch
 set number
 set mouse=a
-colo zellner
 
 " Search down in subfolders
 set wildmenu
@@ -30,7 +29,7 @@ set autoread "Awaly reload buffer when external changes detected
 nnoremap <Space> <PageDown>
 xnoremap <Space> <PageDown>
 
-let mapleader = ','
+let mapleader = '\'
 " switch between line number and relative line number
 nmap <Leader>nu :set relativenumber! number<CR>
 nmap <Leader>rnu :set relativenumber number!<CR>
@@ -47,5 +46,9 @@ nnoremap <Leader>- :vertical resize -5<CR>
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-perl/vim-perl'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'https://github.com/rebelot/kanagawa.nvim.git'
 
 call plug#end()
+
+silent! colorscheme kanagawa

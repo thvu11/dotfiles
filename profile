@@ -1,9 +1,12 @@
-export SVN_EDITOR="vim"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export SVN_EDITOR="nvim"
 
 alias c='clear'
 alias x='exit'
 alias p='pwd'
-alias v='vim'
+alias v='nvim'
+alias n='nvim'
 alias s='svn'
 alias g='git'
 alias gs='git status'
@@ -11,13 +14,13 @@ alias gf='git diff'
 alias gb='git branch'
 alias glp='git log -p'
 alias glo='git log --oneline'
-alias profile='vim ~/.profile'
-alias bashrc='vim ~/.bashrc'
+alias profile='nvim ~/.profile'
+alias bashrc='nvim ~/.bashrc'
+alias vimconfig='nvim ~/.vimrc'
 alias ci='docker rmi -f $(docker images -f "dangling=true" -q )'
 alias cv='docker volume rm -f $(docker volume ls -qf dangling=true)'
 alias dsp='docker system prune'
 alias d='docker compose'
-alias dm='docker-machine'
 alias disk='df -h'
 alias h='history'
 alias listport='lsof -nP +c 15 | grep LISTEN'
