@@ -4,6 +4,9 @@ echo "Setup profile"
 cp profile $HOME/.profile
 source $HOME/.profile
 
+echo "Setup gitconfig (checkout the email and username)"
+cp gitconfig $HOME/.gitconfig
+
 echo "Setup vimrc"
 cp vimrc $HOME/.vimrc
 
