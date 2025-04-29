@@ -38,3 +38,8 @@
 [merge]
         # only available for git > 2.3
         conflictstyle = zdiff3
+[alias]
+        out = "log @{u}.."
+        cur="rev-parse --abbrev-ref HEAD"
+[pager]
+        branch = false
